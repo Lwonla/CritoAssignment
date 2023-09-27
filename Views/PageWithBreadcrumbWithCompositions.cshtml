@@ -7,12 +7,10 @@
 	ViewData["PageDescription"] = @Model.Value("pageDescription");
 	ViewData["PageKeywords"] = @Model.Value("pageKeywords");
 }
-
 <header>
     @await Html.PartialAsync("_Navigation")
-    
- <!--   @await Html.PartialAsync("_ShowCase") -->
+    @await Html.PartialAsync("_Breadcrumb")
 </header>
 <main>
-    
+
 </main>

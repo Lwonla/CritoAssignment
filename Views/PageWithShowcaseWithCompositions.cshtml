@@ -3,17 +3,61 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "_Layout.cshtml";
+	
 	ViewData["PageTitle"] = @Model.Value("pageTitle");
 	ViewData["PageDescription"] = @Model.Value("pageDescription");
 	ViewData["PageKeywords"] = @Model.Value("pageKeywords");
 }
+
 <header>
     @await Html.PartialAsync("_Navigation")
     
     @await Html.PartialAsync("_ShowCase")
 </header>
+
 <main>
-    
     @await Html.PartialAsync("_Brands")
-    
 </main>
+
+<section class="features">
+    <div class="container">
+        <div class="content">
+            <div>
+                <p>@Model.Value("serviceFeaturesSectionTitle")</p>
+                <h1>@Model.Value("serviceFeaturesSectionHeading")</h1>
+                <a class="btn-yellow" href="@Model.Value("serviceFeaturesButtonUrl")">@Model.Value("serviceFeaturesButtonText")<i class="bi bi-arrow-up-right"></i></a>
+            </div>
+            <div>
+                <div class="feature-boxes">
+                    @Html.GetBlockListHtml(Model.ServiceFeatures)
+<!--                    
+<div>
+    <div>
+        <i class="fa-regular fa-handshake"></i>
+        <h2>Business Advice</h2>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </div>
+    <div>
+        <i class="fa-regular fa-lightbulb-on"></i>
+        <h2>Startup Business</h2>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </div>
+</div>
+<div>
+    <div>
+        <i class="fa-regular fa-chart-mixed"></i>
+        <h2>Financial Advice</h2>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </div>
+    <div>
+        <i class="fa-regular fa-box-check"></i>
+        <h2>Risk Management</h2>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </div>
+</div>
+-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -226,7 +226,7 @@ main {
 }
 @media (min-width: 1200px) {
   .brands .container {
-    padding: 100px 0px;
+    padding: 40px 0px;
   }
 }
 .brands .container .brand {
@@ -261,6 +261,34 @@ main {
   font-weight: 700;
   margin-bottom: 20px;
 }
+.features .container .content .feature-boxes .umb-block-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+.features .container .content .feature-boxes .umb-block-list i {
+  font-size: 40px;
+  color: #191919;
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+
+/*
+.features {
+  padding-bottom: 100px;
+}
+.features .container .content {
+  display: flex;
+}
+.features .container .content p {
+  color: #F94D1C;
+}
+.features .container .content h1 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
 .features .container .content .feature-boxes {
   display: flex;
 }
@@ -270,6 +298,7 @@ main {
   margin-bottom: 30px;
   padding-top: 30px;
 }
+*/
 
 .about .container {
   display: flex;
