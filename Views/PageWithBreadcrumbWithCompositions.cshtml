@@ -19,9 +19,8 @@ if(!int.TryParse(Context.Request.Query["page"], out pageNumber))
     .ChildrenOfType("pageWithArticleAndBreadcrumbWithCompositions")?
     .Where(x => x.IsVisible())
     .OrderByDescending(x => x.CreateDate).ToList();
-
-    var totalItems = selection?.Count ?? 0;
     
+    var totalItems = selection?.Count ?? 0;
     //if(selection != null){
     //    totalItems = selection.Count;
     //}
@@ -29,16 +28,12 @@ if(!int.TryParse(Context.Request.Query["page"], out pageNumber))
     //    totalItems=0; //01:16:39
     // }
     var pagedItems = selection?.Skip((pageNumber - 1) * itemsPerPage).Take(itemsPerPage);
-    
 }
-
 <header>
     @await Html.PartialAsync("_Navigation")
     @await Html.PartialAsync("_Breadcrumb")
 </header>
-
 <main>
-
     <section class="article-section">
         <div class="container">
             <div class="browse-news">
@@ -55,7 +50,6 @@ if(!int.TryParse(Context.Request.Query["page"], out pageNumber))
                             var category = item.Value("articleCategory");
                             var title = item.Name();
                             var preamble = item.Value("articlePreamble");
-                            
                             <a href="@url" class="article">
                                 <div class="article-date">
                                     <div class="day">@date.ToString("dd")</div>
@@ -69,7 +63,6 @@ if(!int.TryParse(Context.Request.Query["page"], out pageNumber))
                         }
                     }
             </div>
-        
             <nav class="item-pagination">
                 @if (pageNumber > 1)
                 {
@@ -77,7 +70,6 @@ if(!int.TryParse(Context.Request.Query["page"], out pageNumber))
                         <span aria-hidden="true"><i class="fa-sharp fa-solid fa-chevron-left"></i></span>
                     </a>
                 }
-                
                 @for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++) {
                     if (i == pageNumber) {
                         <a href="#" class="item-link active">@i</a>
@@ -86,7 +78,6 @@ if(!int.TryParse(Context.Request.Query["page"], out pageNumber))
                         <a href="?page=@i" class="item-link">@i</a>
                     }
                 }
-            
                 @if (pageNumber < Math.Ceiling((decimal)totalItems / itemsPerPage)) {
                     <a href="?page=@(pageNumber + 1)" class="item-link link-next">
                         <span aria-hidden="true"><i class="fa-sharp fa-solid fa-chevron-right"></i></span>

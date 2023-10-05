@@ -1,66 +1,62 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.PageWithArticleAndBreadcrumbWithCompositions>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Services;
+@using Umbraco.Cms.Core.Models.PublishedContent;
+@inject IUserService UserService;
+
 @{
 	Layout = "_Layout.cshtml";
+    var userService = UserService;
+    var image = Model.Value<IPublishedContent>("articleImage");
+    
 	ViewData["PageTitle"] = @Model.Value("pageTitle");
 	ViewData["PageDescription"] = @Model.Value("pageDescription");
 	ViewData["PageKeywords"] = @Model.Value("pageKeywords");
 }
+
 <header>
     @await Html.PartialAsync("_Navigation")
     @await Html.PartialAsync("_Breadcrumb")
 </header>
 <main>
 
-<section class="article-section">
-    <div class="container">
-        <div class="browse-news">
-            <h2>Our News & Articles</h2>
-        </div>
-        <div class="articles">
-            
-            
-            
-@{
-	var selection = Umbraco.Content(Guid.Parse("f60681d9-c6ad-49ef-93d8-542775542678"))
-    .ChildrenOfType("pageWithArticleAndBreadcrumbWithCompositions")
-    .Where(x => x.IsVisible())
-    .OrderByDescending(x => x.CreateDate).ToList();
-}
-
-
-	@foreach (var item in selection)
-	{
-		<li>
-			<a href="@item.Url()">@item.Name()</a>
-		</li>
-	}
-
-
-
-            
-            
-            <a href="#" class="article">
-                <div class="article-date">
-                    <div class="day">03</div>
-                    <div class="month">Oct</div>
+    <section class="articleitem-section">
+        <div class="container">
+            <div class="metadata">
+                <h2>@Model.Name</h2>
+                <div class="article-details">
+                    <span>@Model.CreateDate.ToString("MMM dd, yyyy")</span>
+                    <i class="fa-solid fa-circle"></i>
+                    @Model.Value("articleCategory")
+                    <i class="fa-solid fa-circle"></i>
+                    <span>@Model.CreatorName(UserService)</span>
                 </div>
-                <img src="IMG" alt="">
-                <p class="category">Business</p>
-                <h5>How To Use Digitalization In The Classroom</h5>
-                <p>Lorem, upsum</p>
-            </a>
-        </div>
-        <nav class="item-pagination">
-            <a href="#" class="item-link active">1</a>
-            <a href="#" class="item-link">2</a>
-            <a href="#" class="item-link link-next">
-                <span><i class="fa-sharp fa-solid fa-chevron-right"></i></span>
-            </a>
-            
-        </nav>
-    </div>
-</section>
+                <div class="article">
+                    <div class="content">
+                        <img src="@image.Url()">
+                    </div>
+                </div>
+                
+                @Model.Value("articleContent")
+                
+                <div class="articleTags">
+                    @if(Model.HasValue("articleTags"))
+                    {
+                     var tags = Model.Value<IEnumerable<string>>("articleTags");
+
+                            @foreach(var tag in tags)
+                            {
+                                @tag
+                            }
+                    }
+                </div>
+                
+            </div>
+            </div>
+    </section>
+
+
+
 
 </main>
