@@ -34,6 +34,28 @@ html, body {
   text-decoration: none;
 }
 
+.btn-black {
+  margin-top: 20px;
+  background-color: #191919;
+  border: 1px solid #191919;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 20px;
+  font-weight: 600;
+  border-radius: 25px;
+}
+.btn-black i {
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+.btn-black:hover {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border: 1px solid #191919;
+  color: #191919;
+  text-decoration: none;
+}
+
 .btn-transparent {
   margin-top: 20px;
   background-color: transparent;
@@ -338,6 +360,73 @@ main {
   padding-left: 30px;
   padding-right: 30px;
 }
+
+.google-maps {
+    border:0;
+    width:150%;
+    height:380px;
+}
+
+
+
+.content-title {
+  padding-top: 120px;
+  padding-bottom: 90px;
+}
+.content-title p {
+  color: #F94D1C;
+  margin-bottom: 5px;
+}
+.content-title h2 {
+  color: #191919;
+  font-family: "DM Sans", sans-serif;
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.project .container .content-title {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.project .container .project-box-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+.project .container .project-box-content .content-item img {
+  width: 100%;
+}
+.project .container .project-box-content .content-item h3 {
+  color: #191919;
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  padding-top: 35px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #191919;
+}
+.project .container .project-box-content .content-item a {
+  display: block;
+  text-align: right;
+  color: #191919;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 30px 20px;
+}
+.project .container .project-box-content .content-item i {
+  margin-left: 5px;
+}
+.project .container .button-recent-projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 footer {
   background-color: #0E1021;
   color: #fff;
