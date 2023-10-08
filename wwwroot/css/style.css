@@ -268,6 +268,7 @@ main {
   max-height: 100%;
 }
 
+
 .features {
   padding-bottom: 100px;
 }
@@ -289,11 +290,12 @@ main {
   gap: 50px;
 }
 .features .container .content .feature-boxes .umb-block-list i {
-  font-size: 40px;
+  font-size: 20px;
   color: #191919;
   margin-bottom: 30px;
   padding-top: 30px;
 }
+
 
 /*
 .features {
@@ -361,11 +363,7 @@ main {
   padding-right: 30px;
 }
 
-.google-maps {
-    border:0;
-    width:150%;
-    height:380px;
-}
+
 
 
 
@@ -423,6 +421,126 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+
+/*
+
+.content-title {
+  padding-top: 120px;
+  padding-bottom: 90px;
+}
+.content-title p {
+  color: #F94D1C;
+  margin-bottom: 5px;
+}
+.content-title h2 {
+  color: #191919;
+  font-family: "DM Sans", sans-serif;
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+*/
+
+.meet .container {
+background-color: #F0D082;    
+}
+
+.meet .container .content-title {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.meet .container .meet-box-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 35px;
+}
+.meet .container .meet-box-content .content-item img {
+  width: 100%;
+  height: auto;
+}
+.meet .container .meet-box-content .content-item h3 {
+  color: #191919;
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  padding-top: 35px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #191919;
+}
+.meet .container .meet-box-content .content-item a {
+/*  display: block;*/
+  text-align: right;
+  color: #191919;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 30px 20px;
+}
+.meet .container .meet-box-content .content-item i {
+  margin-left: 5px;
+}
+.meet .container .button-recent-projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.contact-information {
+    margin-top: 70px;
+}
+
+.contact-information .container .infobox {
+        
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.contact-information .container .infobox .infobox-content {
+    width: 300px;
+    text-align:center;
+    border: 1px solid #ccc;
+}
+
+
+
+.contact-form {
+    margin-top: 50px;
+    background-color: #F0EFE8;
+}
+
+.contact-form .container {
+    background-color: #F0EFE8;
+}
+
+.contact-form .container h2 {
+text-align: center;
+    margin-bottom: 10px;
+    font-size: 35px;
+    font-weight: 700;
+    color: #191919;
+    font-family: "DM Sans", sans-serif;
+}
+
+.contact-form .container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.google-maps {
+    width: 100%;
+    height: auto;
+    padding:100px 0px 0px 0px;
+    border: 0;
 }
 
 

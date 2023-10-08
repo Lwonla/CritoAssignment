@@ -19,27 +19,33 @@
 <section class="contact-information">
     <div class="container">
         <div class="infobox">
-            <div class="black-circle"><i class="fa-sharp fa-regular fa-location-dot"></i>
-                <h5>Visit us</h5>
-                <div class="address-info">
-                    <p>Sveavägen 31</p>
-                    <p>111 34 STOCKHOLM</p>
-                </div>
+            <div class="infobox-content">
+                <div class="black-circle"><i class="fa-sharp fa-regular fa-location-dot"></i></div>
+                    <h5>Visit us</h5>
+                    <div class="address-info">
+                        <p>Sveavägen 31</p>
+                        <p>111 34 STOCKHOLM</p>
+                    </div>
+                
             </div>
-            <div class="black-circle"><i class="fa-sharp fa-regular fa-phone-volume"></i>
-                <h5>Call us</h5>
-                <div class="phone-info">
-                    <p>+46 (8) 121 470 50</p>
-                    <p>+46 (8) 121 470 51</p>
-                </div>
+            <div class="infobox-content">
+                <div class="black-circle"><i class="fa-sharp fa-regular fa-phone-volume"></i></div>
+                    <h5>Call us</h5>
+                    <div class="phone-info">
+                        <p>+46 (8) 121 470 50</p>
+                        <p>+46 (8) 121 470 51</p>
+                    </div>
+
+            </div>            
+            <div class="infobox-content">
+                <div class="black-circle"><i class="fa-sharp fa-regular fa-envelope"></i></div>
+                    <h5>Email us</h5>
+                    <div class="email-info">
+                        <p>info@crito.com</p>
+                        <p>support@crito.com</p>
+                    </div>
+
             </div>
-            <div class="black-circle"><i class="fa-sharp fa-regular fa-envelope"></i>
-                <h5>Email us</h5>
-                <div class="email-info">
-                    <p>info@crito.com</p>
-                    <p>support@crito.com</p>
-                </div>
-            </div> 
         </div>
     </div>    
 </section>
@@ -49,7 +55,7 @@
         <h2>Leave us a message for any information</h2>
 
 
-        @using (Html.BeginUmbracoForm("Index", "Contacts", FormMethod.Post))
+@*        @using (Html.BeginUmbracoForm("Index", "Contacts", FormMethod.Post))
         {
             <div asp-validation-summary="All" class="text-danger"></div>
         
@@ -59,9 +65,36 @@
             <textarea name="message" placeholder="Your Message"></textarea>
         
             <div class="d-grid mt-2">
-                <button class="btn-theme">Send Message<i class="fa-solid fa-arrow-up-right"></i></button>
+                <button class="btn-yellow">Send Message<i class="fa-solid fa-arrow-up-right"></i></button>
             </div>
-        }
+        }*@
+
+
+
+
+
+            @using (Html.BeginUmbracoForm("Index", "Contacts", FormMethod.Post))
+            {
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group">
+            <input name="name" type="text" placeholder="Name" onkeyup="validateText(event)" class="form-control"/>
+            <span id="nameError" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input name="email" type="email" placeholder="Email" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <textarea name="message" placeholder="Your Message" class="form-control"></textarea>
+        </div>
+
+        <div class="d-grid mt-2">
+            <button class="btn-yellow">Send Message<i class="fa-solid fa-arrow-up-right"></i></button>
+        </div>
+            }
+
 
 
 
@@ -69,8 +102,8 @@
 </section>
 
 <section class="google-maps">
-    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.7793875974992!2d18.05943021295229!3d59.33663697451195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1sen!2sse!4v1696496386030!5m2!1sen!2sse" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.7793875974992!2d18.05943021295229!3d59.33663697451195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1sen!2sse!4v1696496386030!5m2!1sen!2sse" width="1024" height="768" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2034.7793860707916!2d18.062011!3d59.33663700000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1sen!2sse!4v1696758247109!5m2!1sen!2sse" width="1920" height="620" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
 </section>
     
     
